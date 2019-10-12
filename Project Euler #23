@@ -1,0 +1,99 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    
+
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++)
+        {
+            int n=sc.nextInt();
+            int arr[]=new int[n];
+            int top=0;
+            if(n<24)
+            {
+                System.out.println("NO");
+            }
+            else if(n>20161)
+            {
+                System.out.println("YES");
+            }
+            else {
+                for(int j=12;j<=n;j++)
+                {
+                    int sum=0;
+                    if(!isprime(j))
+                    {
+                    for(int k=1;k<j;k++)
+                    {
+                        if(j%k==0)
+                        {
+                            sum=sum+k;
+                        }
+                    }
+
+                    if(sum>j){
+                        top++;
+                    arr[top]=j;
+                    }
+
+                    if(sum==j)
+                    {
+                        
+                    }
+                    }
+                }
+            
+
+            int flag=0;
+
+            for(int l=0;l<arr.length;l++)
+            {
+                for(int m=0;m<arr.length;m++)
+                {
+                    if(arr[l]+arr[m]==n)
+                    {
+                        System.out.println("YES");
+                        flag=1;
+                       break;
+                    }
+                   
+                }
+                if(flag==1)
+                {
+                    break;
+                }
+            }
+             if(flag==0)
+             {
+                        System.out.println("NO");
+                        
+                    }
+            }
+        }
+    }
+
+
+    public static boolean isprime(int n)
+    {
+        int flagg=0;
+        for(int i=2;i<=(n/2);i++)
+        {
+            if(n%i==0)
+            {
+                flagg=1;
+            }
+        }
+        if(flagg==1)
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
