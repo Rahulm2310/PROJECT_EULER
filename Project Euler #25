@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        int t=s.nextInt();
+        LinkedList love=new LinkedList();
+        for(int bjp=0;bjp<t;bjp++)
+        {
+            int n=s.nextInt();
+            int i=0,g=1;
+            while(g!=n)
+            {
+                g=Solution.fact(i);
+                i++;
+            }
+            System.out.println(i-1);
+        }
+        
+    }
+    static int fact(int n)
+    {
+        double d = (n * Math.log10(1.6180339887498948)) - 
+                   ((Math.log10(5)) / 2); 
+      
+        return (int)Math.ceil(d); 
+    }
+}
