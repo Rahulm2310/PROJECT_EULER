@@ -7,13 +7,15 @@ public class Solution {
     private static int array_length = c - 'a' + 1;
     private static char[] cArray = new char[array_length];
 
-    static {
+    static
+    {
         char ch = 'a';
         int i = 0;
         while (ch <= c) {
             cArray[i++] = ch++;
         }
     }
+    
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
