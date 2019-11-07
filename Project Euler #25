@@ -5,9 +5,11 @@ public class Solution {
 
     public static void main(String[] args) 
     {
+    
         Scanner s=new Scanner(System.in);
         int t=s.nextInt();
         LinkedList love=new LinkedList();
+        
         for(int bjp=0;bjp<t;bjp++)
         {
             int n=s.nextInt();
